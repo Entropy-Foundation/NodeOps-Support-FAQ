@@ -102,6 +102,8 @@ Below are the hardware requirements:
     <h4>Description</h4>
     <p>Dashboard is not populating correctly</p>
     <h4>Solution</h4>
-    While giving the path to the logs file, kindly add the file name. It should look like the below
+    Add the full log path with the file name inside the <pre>/etc/promtail/config.yml</pre>
+and restart the promtail.service
+    It should look like the below
     <code>__path__: "/home/node/supra_configs_mainnet/supra_node_logs/supra.log"</code>
 </details>
