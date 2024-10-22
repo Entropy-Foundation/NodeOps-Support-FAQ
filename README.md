@@ -22,7 +22,7 @@ Below are the hardware requirements:
 - Disk Type: SSD
 - Minimum Disk Size: 2TB
 - Network Bandwidth: 1Gbps
-
+<hr>
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">Blocks are frozen</summary>
     <img src="./images/Frozen-blocks.png" alt="Frozen blocks">
@@ -30,7 +30,7 @@ Below are the hardware requirements:
     <p>Epoch and round are stuck in a particular number</p>
     <h4>Solution</h4>
 </details>
-
+<hr>
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">Corruption: IO error</summary>
   <img src="./images/io-error.png" alt="Frozen blocks">
@@ -48,6 +48,7 @@ Below are the hardware requirements:
     9. <code>docker exec -it supra_$ip_address /supra/supra node smr run </code>
 </details>
 
+<hr>
 
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC Error on startup</summary>
@@ -69,6 +70,7 @@ Below are the hardware requirements:
 
 </details>
 
+<hr>
 
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC logs | ERROR ntex_files</summary>
@@ -78,6 +80,7 @@ Below are the hardware requirements:
     <h4>Solution</h4>
 </details>
 
+<hr>
 
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC Node Phase 2 Error</summary>
@@ -88,4 +91,17 @@ Below are the hardware requirements:
     <pre>docker stop ${Container_name}
     docker remove ${Container_name}</pre>
     then repeat Step 1~3
+</details>
+
+<hr>
+
+<details>
+  <summary style="font-weight: bold; font-size: 1.2em;">Grafana not populating data to graphs</summary>
+    <img src="./images/grafana-no-data-1.png" alt="grafana-no-data">
+    <img src="./images/grafana-no-data-2.png" alt="grafana-no-data">
+    <h4>Description</h4>
+    <p>Dashboard is not populating correctly</p>
+    <h4>Solution</h4>
+    While giving the path to the logs file, kindly add the file name. It should look like the below
+    <code>__path__: "/home/node/supra_configs_mainnet/supra_node_logs/supra.log"</code>
 </details>
