@@ -1,11 +1,5 @@
 # NodeOps-Support-FAQ
 
-
-
-
-
-# NodeOps-Support-FAQ
-
 This document is created to support node operators, with their issue, and solutions they can administer before reaching out for support.
 
 Some errors are peculiar with 
@@ -82,4 +76,16 @@ Below are the hardware requirements:
     <h4>Description</h4>
     <p>ERROR ntex_files: Specified path is not a directory: "html_guide/"</p>
     <h4>Solution</h4>
+</details>
+
+
+<details>
+  <summary style="font-weight: bold; font-size: 1.2em;">RPC Node Phase 2 Error</summary>
+    <img src="./images/UnexpectedEof.png" alt="Frozen blocks">
+    <h4>Description</h4>
+    <p>kind: UnexpectedEof, error: Error("EOF while parsing a value", line: 1, column: 0)</p>
+    <h4>Solution</h4>
+    <pre>docker stop ${Container_name}
+    docker remove ${Container_name}</pre>
+    then repeat Step 1~3
 </details>
