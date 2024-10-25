@@ -70,16 +70,8 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace</p
     <p>rpc::client: Failed to reconnect to server, will try again in 5 seconds</p>
     <h3>Solution</h3>
     <strong>Step 1:</strong> Open port 26000 and 27000<br>
-    <strong></strong><br>
-     <code>sudo rm -rf ./supra_configs/rpc_archive ./supra_configs/rpc_ledger ./supra_configs/snapshot ./supra_configs/rpc_store/* ./supra_configs/rpc_node_logs ./supra_configs/latest_snapshot.zip</code><br>
-    <strong>Step 2:</strong><br>
-    <code>wget -O ./supra_configs/latest_snapshot.zip https://testnet-snapshot.supra.com/snapshots/latest_snapshot.zip</code><br>
-    <strong>Step 3:</strong><br>
-    <code>unzip ./supra_configs/latest_snapshot.zip -d ./supra_configs/</code><br>
-    <strong>Step 4: </strong><br>
-    <code>cp -r ./supra_configs/snapshot/snapshot_*/* ./supra_configs/rpc_store/</code><br>
-    <strong>Step 5:</strong><br>
-    <code>docker exec -itd supra_rpc_{your_rpc_ip} /supra/rpc_node </code>
+    <strong>Step 2</strong> Restart container (replace container-id with your actual container ID)<br>
+    <pre>docker restart container-id </pre>
 
 </details>
 
