@@ -1,3 +1,6 @@
+
+<img src="./images/supra-oracles.jpg" alt="Supra Oracles logo">
+
 # NodeOps-Support-FAQ
 
 This document is created to support node operators, with their issue, and solutions they can administer before reaching out for support.
