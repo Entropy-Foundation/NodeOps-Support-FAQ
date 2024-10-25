@@ -5,7 +5,6 @@
 
 This document is created to support node operators, with their issue, and solutions they can administer before reaching out for support.
 
-Some errors are peculiar with 
 
 ## FAQ
 #### 1. Should the onboarding script be run directly on the machine that will act as the staking provider?
@@ -13,7 +12,7 @@ Some errors are peculiar with
 __Answer__:
 You should run all the steps of Round onboarding for Public Testnet on the machine that will act as a stacking provider.
 
-#### 2. What are the hardware requirements
+#### 2. What are the hardware requirements?
 
 __Answer__:
 
