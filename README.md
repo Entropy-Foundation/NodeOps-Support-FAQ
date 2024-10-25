@@ -26,19 +26,26 @@ Below are the hardware requirements:
 - Network Bandwidth: 1Gbps
 <hr>
 <details>
-  <summary style="font-weight: bold; font-size: 1.2em;">Blocks are frozen</summary>
+  <summary style="font-weight: bold; font-size: 1.2em;">Blocks are frozen - Validator Node</summary>
     <img src="./images/Frozen-blocks.png" alt="Frozen blocks">
-    <h4>Description</h4>
+    <h3>Description</h3>
     <p>Epoch and round are stuck in a particular number</p>
-    <h4>Solution</h4>
+    <h3>Solution</h3>
+    You would need to restart the network using a snapshot.<br>
+    Following this <a href="https://docs.google.com/document/d/1k0u7k58wFN0RlBmA-2eYrmsJZOGQQQASMINrYgugaVE/edit?tab=t.0#heading=h.vpui32qz16sp" > on-boarding document </a>
+    <p>1. Re-run <code>.supra $./onboarding_mainnet.sh</code></p>
+    <p>2. Then select <pre> Select Phase V - Restart the network using snapshot</pre>
+    </p>
+
+
 </details>
 <hr>
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">Corruption: IO error</summary>
   <img src="./images/io-error.png" alt="Frozen blocks">
-  <h4>Description</h4>
+  <h3>Description</h3>
     <p>Database thread 'main' panicked</p>
-    <h4>Solution</h4>
+    <h3>Solution</h3>
     1. <code>docker ps -a</code><br>
     2. <code>docker stop supra_${ip_address}</code><br>
     3. <code>sudo rm -rf ./supra_configs/ledger_storage ./supra_configs/smr_storage/* ./supra_configs/supra_node_logs </code><br>
@@ -55,9 +62,9 @@ Below are the hardware requirements:
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC Error on startup</summary>
     <img src="./images/rpc-error-on-startup.png" alt="Frozen blocks">
-    <h4>Description</h4>
+    <h3>Description</h3>
     <p>rpc::client: Failed to reconnect to server, will try again in 5 seconds</p>
-    <h4>Solution</h4>
+    <h3>Solution</h3>
     <strong>Note:</strong> Open port 26000 and 27000<br>
     <strong>Step 1:</strong><br>
      <code>sudo rm -rf ./supra_configs/rpc_archive ./supra_configs/rpc_ledger ./supra_configs/snapshot ./supra_configs/rpc_store/* ./supra_configs/rpc_node_logs ./supra_configs/latest_snapshot.zip</code><br>
@@ -77,9 +84,9 @@ Below are the hardware requirements:
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC logs | ERROR ntex_files</summary>
     <img src="./images/ntex_files.png" alt="Frozen blocks">
-    <h4>Description</h4>
+    <h3>Description</h3>
     <p>ERROR ntex_files: Specified path is not a directory: "html_guide/"</p>
-    <h4>Solution</h4>
+    <h3>Solution</h3>
 </details>
 
 <hr>
@@ -87,9 +94,9 @@ Below are the hardware requirements:
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC Node Phase 2 Error</summary>
     <img src="./images/UnexpectedEof.png" alt="Frozen blocks">
-    <h4>Description</h4>
+    <h3>Description</h3>
     <p>kind: UnexpectedEof, error: Error("EOF while parsing a value", line: 1, column: 0)</p>
-    <h4>Solution</h4>
+    <h3>Solution</h3>
     <pre>docker stop ${Container_name}
     docker remove ${Container_name}</pre>
     then repeat Step 1~3
@@ -101,9 +108,9 @@ Below are the hardware requirements:
   <summary style="font-weight: bold; font-size: 1.2em;">Grafana not populating data to graphs</summary>
     <img src="./images/grafana-no-data-1.png" alt="grafana-no-data">
     <img src="./images/grafana-no-data-2.png" alt="grafana-no-data">
-    <h4>Description</h4>
+    <h3>Description</h3>
     <p>Dashboard is not populating correctly</p>
-    <h4>Solution</h4>
+    <h3>Solution</h3>
     Add the full log path with the file name inside the <pre>/etc/promtail/config.yml</pre>
 and restart the promtail.service
     It should look like the below
