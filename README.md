@@ -42,9 +42,13 @@ Below are the hardware requirements:
 <hr>
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">Corruption: IO error</summary>
-  <img src="./images/io-error.png" alt="Frozen blocks">
+
   <h3>Description</h3>
     <p>Database thread 'main' panicked</p>
+    <pre>thread 'main' panicked at /home/ubuntu/smr-moonshot/consensus/node/src/bftnode.rs:57:14:
+fail to create rocksdb: DBError(Error {
+  message: "Corruption: Corruption: IO error: No such file or directory: While open a file for random read: configs/smr_storage/000364.ldb: No such file or directory in file configs/smr_storage/MANIFEST-000369" })
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace</pre>
     <h3>Solution</h3>
     1. <code>docker ps -a</code><br>
     2. <code>docker stop supra_${ip_address}</code><br>
@@ -65,8 +69,8 @@ Below are the hardware requirements:
     <h3>Description</h3>
     <p>rpc::client: Failed to reconnect to server, will try again in 5 seconds</p>
     <h3>Solution</h3>
-    <strong>Note:</strong> Open port 26000 and 27000<br>
-    <strong>Step 1:</strong><br>
+    <strong>Step 1:</strong> Open port 26000 and 27000<br>
+    <strong></strong><br>
      <code>sudo rm -rf ./supra_configs/rpc_archive ./supra_configs/rpc_ledger ./supra_configs/snapshot ./supra_configs/rpc_store/* ./supra_configs/rpc_node_logs ./supra_configs/latest_snapshot.zip</code><br>
     <strong>Step 2:</strong><br>
     <code>wget -O ./supra_configs/latest_snapshot.zip https://testnet-snapshot.supra.com/snapshots/latest_snapshot.zip</code><br>
@@ -115,4 +119,46 @@ Below are the hardware requirements:
 and restart the promtail.service
     It should look like the below
     <code>__path__: "/home/node/supra_configs_mainnet/supra_node_logs/supra.log"</code>
+</details>
+<hr>
+<details>
+  <summary style="font-weight: bold; font-size: 1.2em;">Grafana setup IP is not whitelisted?</summary>
+  
+  <h3>Description</h3>
+  <pre>Status 403: Your IP is not whitelisted. Please provide your IPv4 to the Supra Team.</pre>
+   <h3>Solution</h3>
+  <p>Please provide your IPv4 to the Supra Team on Discord</p>
+</details>
+<hr>
+<details>
+  <summary style="font-weight: bold; font-size: 1.2em;">ERROR: API key is missing</summary>
+  <h3>Description</h3>
+  <p>Error API Key is missing or similar</p>
+  <pre>supra@ip-172-31-24-250:~$ chmod +x nodeops-monitoring-telegraf.sh
+supra@ip-172-31-24-250:~$ sudo ./nodeops-monitoring-telegraf.sh
+[sudo] password for supra:
+
+ERROR: API key is missing.</pre>
+
+<h3>Solution</h3>
+
+
+<strong>Step 1:</strong> <code>export api_key=AIzaSyD2Byf2_yWYngvHnv6Ib7V6C2EpHY3LL0E</code>
+
+Run the below step according to your distribution<br>
+<strong>Step 2:</strong> <pre>sudo -E ./nodeops-monitoring-telegraf-centos.sh or sudo -E ./nodeops-monitoring-telegraf.sh</pre>
+
+<strong>Note:</strong> <p>If you face 403 IP is not whitelisted while running the above steps, then please provide your node IP to  the Supra Team on discord, so that we can provide you access to the Grafana script, after getting whitelisted you can run the above steps again.</p>
+</details>
+
+<hr>
+
+<details>
+  <summary style="font-weight: bold; font-size: 1.2em;">RPC node out of sync!</summary>
+  <h3>Description</h3>
+ <pre>INFO rpc_node::listener: RPC node out of sync!</pre>
+ <h3>Solution</h3>
+ Following this <a href="https://docs.google.com/document/d/1pWXxS38HDTU0U0c-QQA0tPWt05jlfI-hd6gSTTCIFmM/edit?tab=t.0#heading=h.lxae1w9pebkd" > on-boarding document </a>
+<pre>.supra $./rpc_onboarding_mainnet.sh 
+Select Phase III - Re-Start RPC node</pre>
 </details>
