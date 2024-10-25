@@ -5,7 +5,7 @@ This document is created to support node operators, with their issue, and soluti
 Some errors are peculiar with 
 
 ## FAQ
-#### 1. Phase I (Generate Operator Keys) and the rest of the onboarding should be run directly on the machine that will act as the staking provider, correct?
+#### 1. Should the onboarding script be run directly on the machine that will act as the staking provider?
 
 __Answer__:
 You should run all the steps of Round onboarding for Public Testnet on the machine that will act as a stacking provider.
