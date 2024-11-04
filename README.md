@@ -24,11 +24,21 @@ Below are the hardware requirements:
 - Disk Type: SSD
 - Minimum Disk Size: 2TB
 - Network Bandwidth: 1Gbps
-<hr>
+<br>
+<br>
+<br>
+
+## Issues, Errors & Solutions
+
 <details>
   <summary style="font-weight: bold; font-size: 1.2em;">Blocks are frozen - Validator Node</summary>
-    <img src="./images/Frozen-blocks.png" alt="Frozen blocks">
     <h3>Description</h3>
+    <pre>[2024-10-17T01:51:50.607720Z+00:00] WARN moonshot::core: Timeout reached for 
+View { epoch_id: EpochId { chain_id: 6, epoch: 195 }, round: 2306 }
+[2024-10-17T01:51:55.608661Z+00:00] WARN moonshot::core: Timeout reached for 
+View { epoch_id: EpochId { chain_id: 6, epoch: 195 }, round: 2306 }
+[2024-10-17T01:52:00.610197Z+00:00] WARN moonshot::core: Timeout reached for 
+View { epoch_id: EpochId { chain_id: 6, epoch: 195 }, round: 2306 }</pre>
     <p>Epoch and round are stuck in a particular number</p>
     <h3>Solution</h3>
     You would need to restart the network using a snapshot.<br>
@@ -78,16 +88,6 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace</p
 <hr>
 
 <details>
-  <summary style="font-weight: bold; font-size: 1.2em;">RPC logs | ERROR ntex_files</summary>
-    <img src="./images/ntex_files.png" alt="Frozen blocks">
-    <h3>Description</h3>
-    <p>ERROR ntex_files: Specified path is not a directory: "html_guide/"</p>
-    <h3>Solution</h3>
-</details>
-
-<hr>
-
-<details>
   <summary style="font-weight: bold; font-size: 1.2em;">RPC Node Phase 2 Error</summary>
     <img src="./images/UnexpectedEof.png" alt="Frozen blocks">
     <h3>Description</h3>
@@ -95,7 +95,8 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace</p
     <h3>Solution</h3>
     <pre>docker stop ${Container_name}
     docker remove ${Container_name}</pre>
-    then repeat Step 1~3
+    Following this <a href="https://docs.google.com/document/d/1pWXxS38HDTU0U0c-QQA0tPWt05jlfI-hd6gSTTCIFmM/edit?tab=t.0#heading=h.lxae1w9pebkd" > on-boarding document </a> repeat Step 1-2
+   
 </details>
 
 <hr>
@@ -154,3 +155,5 @@ Run the below step according to your distribution<br>
 <pre>.supra $./rpc_onboarding_mainnet.sh 
 Select Phase III - Re-Start RPC node</pre>
 </details>
+
+
