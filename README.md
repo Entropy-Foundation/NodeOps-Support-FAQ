@@ -34,6 +34,11 @@ __Answer__:
 Yes, its expected for now...
 We'll release an update that enables pruning in the near future. It's not currently possible
 
+
+#### 4. There is no derived pool address in latest_validator_info.json file
+__Answer__:
+In your latest_validator_info.json file, your derived pool address is account_address 
+
 ## Issues, Errors & Solutions
 
 <details>
