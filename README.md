@@ -28,6 +28,12 @@ Below are the hardware requirements:
 <br>
 <br>
 
+#### 3. My testnet RPC nodes are experiencing increasing disk usage. Are there any pruning options?
+__Answer__:
+
+Yes, its expected for now...
+We'll release an update that enables pruning in the near future. It's not currently possible
+
 ## Issues, Errors & Solutions
 
 <details>
@@ -156,4 +162,19 @@ Run the below step according to your distribution<br>
 Select Phase III - Re-Start RPC node</pre>
 </details>
 
+<hr>
 
+<details>
+  <summary style="font-weight: bold; font-size: 1.2em;">Subscription execution failed: "Closed(..)</summary>
+    <h3>Description</h3>
+    <pre>[2024-11-06T08:20:47.531043Z+00:00] ERROR sop2p::behaviour: Subscription execution failed: "Closed(..)"    
+[2024-11-06T08:20:47.531922Z+00:00] ERROR sop2p::behaviour: Subscription execution failed: "Closed(..)"    
+[2024-11-06T08:20:47.531961Z+00:00] ERROR sop2p::behaviour: Subscription execution failed: "Closed(..)"</pre>
+    <h3>Solution</h3>
+    <p> Restart node from lates snapshot</p>
+    <p>Step 1: Download the update_version_round_6_3.sh.</p>
+<pre>wget https://raw.githubusercontent.com/Entropy-Foundation/supra-nodeops-data/refs/heads/master/scripts/update_version_round_6_3.sh</pre>
+    
+<p>Step 2: <code>chmod +x update_version_round_6_3.sh</code></p>
+<p>Step 3: <code>./update_version_round_6_3.sh</code></p>
+</details>
