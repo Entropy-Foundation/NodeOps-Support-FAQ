@@ -189,10 +189,10 @@ Select Phase III - Re-Start RPC node</pre>
     hard nofile 65535
   </pre>
   <pre>
-    # Step3: increase sys limit
+    # Step3: increase sys limit<code>
     sudo nano /etc/sysctl.conf
     net.core.somaxconn=65535
-    sudo sysctl -p
+    sudo sysctl -p</code>
   </pre>
   <p> Restart node from lates snapshot</p>
     <p>Step 1: Download the update_version_round_6_3.sh.</p>
