@@ -178,14 +178,14 @@ Select Phase III - Re-Start RPC node</pre>
   <h3>Solution</h3>
   <p> Increase System ulimit if not done already</p>
   <pre>
-    <p># increase shell fd limit</p>
+    # Step1:increase shell fd limit
     ulimit -n 65535
     ulimit -n
-    <p># increase limit for user</p>
+    # Step2: increase limit for user
     sudo nano /etc/security/limits.conf
     soft nofile 65535
     hard nofile 65535
-    <p> # increase sys limit</p>
+    # Step3: increase sys limit
     sudo nano /etc/sysctl.conf
     net.core.somaxconn=65535
     sudo sysctl -p 
