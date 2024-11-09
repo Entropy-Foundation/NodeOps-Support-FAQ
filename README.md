@@ -198,6 +198,6 @@ Select Phase III - Re-Start RPC node</pre>
     <p>Step 1: Download the update_version_round_6_3.sh.</p>
       <pre>wget https://raw.githubusercontent.com/Entropy-Foundation/supra-nodeops-data/refs/heads/master/scripts/update_version_round_6_3.sh</pre>
         
-    <p>Step 2: <code>chmod +x update_version_round_6_3.sh</code></p>
-    <p>Step 3: <code>./update_version_round_6_3.sh</code></p>
+  <p>Step 2: <code>chmod +x update_version_round_6_3.sh</code></p>
+  <p>Step 3: <code>./update_version_round_6_3.sh</code></p>
 </details>
