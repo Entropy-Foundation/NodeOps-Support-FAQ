@@ -186,12 +186,12 @@ Select Phase III - Re-Start RPC node</pre>
       sudo nano /etc/security/limits.conf
       soft nofile 65535
       hard nofile 65535
-      
+
     # Step3: increase sys limit
       sudo nano /etc/sysctl.conf
       net.core.somaxconn=65535
       sudo sysctl -p
-    </pre>
+  </pre>
   <p> Restart node from lates snapshot</p>
     <p>Step 1: Download the update_version_round_6_3.sh.</p>
       <pre>wget https://raw.githubusercontent.com/Entropy-Foundation/supra-nodeops-data/refs/heads/master/scripts/update_version_round_6_3.sh</pre>
