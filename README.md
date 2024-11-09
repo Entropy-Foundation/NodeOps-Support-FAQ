@@ -177,16 +177,20 @@ Select Phase III - Re-Start RPC node</pre>
 [2024-11-06T08:20:47.531961Z+00:00] ERROR sop2p::behaviour: Subscription execution failed: "Closed(..)"</pre>
   <h3>Solution</h3>
   <p> Increase System ulimit if not done already</p>
-  <pre># increase shell fd limit
+  
+  <p># increase shell fd limit</p>
+  <pre>
     ulimit -n 65535
     ulimit -n
-
-    # increase limit for user
+  </pre>
+  <p># increase limit for user</p>
+  <pre>
     sudo nano /etc/security/limits.conf
     soft nofile 65535
     hard nofile 65535
-
-    # increase sys limit
+  </pre>
+  <p> # increase sys limit</p>
+  <pre>
     sudo nano /etc/sysctl.conf
     net.core.somaxconn=65535
     sudo sysctl -p 
