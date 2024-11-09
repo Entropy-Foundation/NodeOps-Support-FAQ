@@ -177,19 +177,19 @@ Select Phase III - Re-Start RPC node</pre>
 [2024-11-06T08:20:47.531961Z+00:00] ERROR sop2p::behaviour: Subscription execution failed: "Closed(..)"</pre>
   <h3>Solution</h3>
   <p> Increase System ulimit if not done already</p>
-  <pre>
-  # Step1:increase shell fd limit
-  ulimit -n 65535
-  ulimit -n
-  # Step2: increase limit for user
-  sudo nano /etc/security/limits.conf
-  soft nofile 65535
-  hard nofile 65535
-  # Step3: increase sys limit
-  sudo nano /etc/sysctl.conf
-  net.core.somaxconn=65535
-  sudo sysctl -p
-  </pre>
+    <pre>
+      # Step1:increase shell fd limit
+      ulimit -n 65535
+      ulimit -n
+      # Step2: increase limit for user
+      sudo nano /etc/security/limits.conf
+      soft nofile 65535
+      hard nofile 65535
+      # Step3: increase sys limit
+      sudo nano /etc/sysctl.conf
+      net.core.somaxconn=65535
+      sudo sysctl -p
+    </pre>
   <p> Restart node from lates snapshot</p>
     <p>Step 1: Download the update_version_round_6_3.sh.</p>
       <pre>wget https://raw.githubusercontent.com/Entropy-Foundation/supra-nodeops-data/refs/heads/master/scripts/update_version_round_6_3.sh</pre>
