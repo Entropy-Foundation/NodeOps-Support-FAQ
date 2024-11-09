@@ -178,15 +178,15 @@ Select Phase III - Re-Start RPC node</pre>
   <h3>Solution</h3>
   <p> Increase System ulimit if not done already</p>
   <pre>
-    # Step1:increase shell fd limit
+    # Step1:increase shell fd limit<code>
     ulimit -n 65535
-    ulimit -n
+    ulimit -n</code>
   </pre>
   <pre>
-    # Step2: increase limit for user
+    # Step2: increase limit for user<code>
     sudo nano /etc/security/limits.conf
     soft nofile 65535
-    hard nofile 65535
+    hard nofile 65535</code>
   </pre>
   <pre>
     # Step3: increase sys limit<code>
